@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package proto;
+
+import "request.proto";
+import "response.proto";
+
+// protoc -I proto/ proto/server.proto proto/response.proto proto/request.proto --go_out=plugins=grpc:proto
+
+// Interface exported by the server.
+service Posada {
+  // Returns listings based on request parameters.
+  rpc GetListing(GetListingRequest) returns (GetListingResponse) {}
+
+  // Updates a listing.
+  rpc UpdateListing(UpdateListingRequest) returns (UpdateListingResponse) {}
+
+  // Creates a listing.
+  rpc CreateListing(CreateListingRequest) returns (CreateListingResponse) {}
+
+  // Deletes a listing.
+  rpc DeleteListing(DeleteListingRequest) returns (DeleteListingResponse) {}
+
+
+  // Returns reservations based on request parameters.
+  rpc GetReservation(GetReservationRequest) returns (GetReservationResponse) {}
+
+  // Updates a Reservation.
+  rpc UpdateReservation(UpdateReservationRequest) returns (UpdateReservationResponse) {}
+
+  // Creates a Reservation.
+  rpc CreateReservation(CreateReservationRequest) returns (CreateReservationResponse) {}
+
+  // Deletes a Reservation.
+  rpc DeleteReservation(DeleteReservationRequest) returns (DeleteReservationResponse) {}
+
+
+  // Returns guests based on request parameters.
+  rpc GetGuest(GetGuestRequest) returns (GetGuestResponse) {}
+
+  // Updates a Guest.
+  rpc UpdateGuest(UpdateGuestRequest) returns (UpdateGuestResponse) {}
+
+  // Creates a Guest.
+  rpc CreateGuest(CreateGuestRequest) returns (CreateGuestResponse) {}
+
+  // Deletes a Guest.
+  rpc DeleteGuest(DeleteGuestRequest) returns (DeleteGuestResponse) {}
+
+
+  // Returns calendars based on request parameters.
+  rpc GetCalendar(GetCalendarRequest) returns (GetCalendarResponse) {}
+
+  // Updates a Calendar.
+  rpc UpdateCalendar(UpdateCalendarRequest) returns (UpdateCalendarResponse) {}
+
+  // Creates a Calendar.
+  rpc CreateCalendar(CreateCalendarRequest) returns (CreateCalendarResponse) {}
+
+  // Deletes a Calendar.
+  rpc DeleteCalendar(DeleteCalendarRequest) returns (DeleteCalendarResponse) {}
+
+
+  // Returns conversation based on request parameters.
+  rpc GetConversation(GetConversationRequest) returns (GetConversationResponse) {}
+
+  // Updates a Conversation.
+  rpc UpdateConversation(UpdateConversationRequest) returns (UpdateConversationResponse) {}
+
+  // Creates a Conversation.
+  rpc CreateConversation(CreateConversationRequest) returns (CreateConversationResponse) {}
+
+  // Deletes a Conversation.
+  rpc DeleteConversation(DeleteConversationRequest) returns (DeleteConversationResponse) {}
+}

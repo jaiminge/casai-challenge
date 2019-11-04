@@ -1,0 +1,135 @@
+// To build:
+// protoc --proto_path=proto -I=proto --go_out=plugins=grpc:proto proto/*.proto
+
+syntax = "proto3";
+
+package proto;
+
+// The base message to load configs from file.
+message Config {
+  string tls = 1;
+  string certFile = 2;
+  string keyFile = 3;
+  int32 port = 4;
+  string db_user = 5;
+  string db_pass = 6;
+  string db_name = 7;
+  string db_addr = 8;
+}
+
+message Amenity {
+  string name = 1;
+
+  string logo_url = 2;
+}
+
+message Log {
+  Timestamp last_updated = 1;
+  Timestamp created_at = 2;
+}
+
+// Proto representation of a date. 2019-05-23 = {year: 2019 month:5 day:23}.
+message Date {
+  int32 year = 1;
+
+  // Month as would be written on a string. 1-indexed so Jan = 1.
+  int32 month = 2;
+
+  // Month as would be written on a string. 1-indexed so 01 = 1.
+  int32 day = 3;
+
+  string timezone = 4;
+}
+
+message DateTime {
+  Date date = 1;
+
+  Time time = 2;
+}
+
+// Proto representation of a time. 23:05:06 = {hour:23 minutes:5 second: 6}.
+message Time {
+  int32 hours = 1;
+
+  int32 minutes = 2;
+
+  int32 seconds = 3;
+}
+
+message Timestamp {
+  // Represents seconds of UTC time since Unix epoch
+  // 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
+  // 9999-12-31T23:59:59Z inclusive.
+  int64 seconds = 1;
+
+  // Non-negative fractions of a second at nanosecond resolution. Negative
+  // second values with fractions must still have non-negative nanos values
+  // that count forward in time. Must be from 0 to 999,999,999
+  // inclusive.
+  int32 nanos = 2;
+}
+
+message Price {
+  string currency = 1;
+  float base_price = 2;
+  float cleaning_fee = 3;
+  float extra_person_fee = 4;
+  float weekly_price_factor = 5;
+  float montly_price_factor = 6;
+  float security_deposit_fee = 7;
+}
+
+message Address {
+  string apt = 1;
+  double lat = 2;
+  double lng = 3;
+  string city = 4;
+  string state = 5;
+  string street = 6;
+  string country = 7;
+  string zipcode = 8;
+  string neighborhood = 9;
+}
+
+message Picture {
+  string large_url = 1;
+  string regular_url = 2;
+  string thumbnail_url = 3;
+  string caption = 4;
+}
+
+message Listing {
+    // @inject_tag: sql:”primary_key”
+    int64 id = 1;
+
+    // @inject_tag: sql:"notnull,default:0"
+    int32 beds = 2;
+    string tags = 3;
+    string type = 4;
+    string terms_maxnights = 5;
+    string terms_minnights = 6;
+    string terms_cancellation = 7;
+    string title = 8;
+    bool active = 9;
+    Price price = 10;
+    Address address = 11;
+    string bedtype = 12;
+    repeated Picture pictures = 13;
+    int32 bedrooms = 14;
+    int32 bathrooms = 15;
+    bool islisted = 16;
+    string nickname = 17;
+    string timezone = 18;
+    int32 accomodates = 21;
+    bool allows_pets = 22;
+    bool allows_events = 23;
+    bool allows_infants = 24;
+    bool allows_smoking = 25;
+    bool allows_children = 26;
+    Time default_check_in_time = 27;
+    Time default_check_out_time = 28;
+    repeated Amenity amenities = 29;
+    repeated Amenity amenities_not_included = 30;
+
+    Log log = 100;
+}

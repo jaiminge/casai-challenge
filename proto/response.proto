@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package proto;
+
+import "models.proto";
+
+message GetListingResponse {
+  Listing listing = 1;
+}
+
+message CreateListingResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateListingResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteListingResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetReservationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateReservationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateReservationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteReservationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetGuestResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateGuestResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateGuestResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteGuestResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetCalendarResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateCalendarResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateCalendarResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteCalendarResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetConversationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateConversationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateConversationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteConversationResponse {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}

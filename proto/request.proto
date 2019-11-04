@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package proto;
+
+import "models.proto";
+
+message GetListingRequest {
+  Listing listing = 1;
+}
+
+message CreateListingRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateListingRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteListingRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetReservationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateReservationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateReservationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteReservationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetGuestRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateGuestRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateGuestRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteGuestRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetCalendarRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateCalendarRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateCalendarRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteCalendarRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message GetConversationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message CreateConversationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message UpdateConversationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
+
+message DeleteConversationRequest {
+  int64 id = 1;
+  string nickname = 2;
+  string address = 3;
+}
